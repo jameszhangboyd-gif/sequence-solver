@@ -39,10 +39,18 @@ class SequenceEngine:
 if __name__ == "__main__":
     engine = SequenceEngine()
     
-    # Example 1: Your earlier problem (a1=4, d=7, n=5)
-    term_5 = engine.get_arithmetic_term(4, 7, 5)
-    print(f"Arithmetic 5th term (a1=4, d=7): {term_5}")
-
-    # Example 2: Checking the quadratic sequence 2, 5, 10, 17, 26
-    my_list = [2, 5, 10, 17, 26]
-    print(f"Analyzing {my_list}: {engine.check_quadratic_pattern(my_list)}")
+    print("--- Interactive Sequence Solver ---")
+    print("Let's find the nth term of an arithmetic sequence.")
+    
+    # Get user input
+    try:
+        start = float(input("Enter the first term (a1): "))
+        diff = float(input("Enter the common difference (d): "))
+        n_val = int(input("Which term number do you want to find (n)? "))
+        
+        # Calculate
+        result = engine.get_arithmetic_term(start, diff, n_val)
+        
+        print(f"\nResult: The {n_val}th term is {result}")
+    except ValueError:
+        print("Invalid input. Please enter numbers only.")
