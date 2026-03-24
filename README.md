@@ -9,3 +9,8 @@ Finite Difference Analysis: Detects quadratic growth patterns in datasets.
 Term Calculation: Explicit formulas for Arithmetic and Geometric progressions.
 
 Partial Sums: Automated summation for large datasets.
+
+## Usage
+To run the analysis tool, use:
+```bash
+python math_tools.py
