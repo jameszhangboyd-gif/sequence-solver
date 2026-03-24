@@ -39,18 +39,36 @@ class SequenceEngine:
 if __name__ == "__main__":
     engine = SequenceEngine()
     
-    print("--- Interactive Sequence Solver ---")
-    print("Let's find the nth term of an arithmetic sequence.")
-    
-    # Get user input
-    try:
-        start = float(input("Enter the first term (a1): "))
-        diff = float(input("Enter the common difference (d): "))
-        n_val = int(input("Which term number do you want to find (n)? "))
+    while True:
+        print("\n--- CHAPTER 9 MATH ENGINE ---")
+        print("1. Find nth term (Arithmetic)")
+        print("2. Find nth term (Geometric)")
+        print("3. Analyze a pattern (Quadratic Check)")
+        print("4. Exit")
         
-        # Calculate
-        result = engine.get_arithmetic_term(start, diff, n_val)
-        
-        print(f"\nResult: The {n_val}th term is {result}")
-    except ValueError:
-        print("Invalid input. Please enter numbers only.")
+        choice = input("\nSelect an option (1-4): ")
+
+        if choice == '1':
+            a1 = float(input("Enter starting number (a1): "))
+            d = float(input("Enter the jump (d): "))
+            n = int(input("Which term number do you want? "))
+            print(f"Result: The {n}th term is {engine.get_arithmetic_term(a1, d, n)}")
+
+        elif choice == '2':
+            a1 = float(input("Enter starting number (a1): "))
+            r = float(input("Enter the multiplier (r): "))
+            n = int(input("Which term number do you want? "))
+            print(f"Result: The {n}th term is {engine.get_geometric_term(a1, r, n)}")
+
+        elif choice == '3':
+            print("Enter your numbers separated by commas (e.g., 2, 5, 10, 17, 26)")
+            user_input = input("Sequence: ")
+            # This line converts the text "2, 5, 10" into a list of numbers [2, 5, 10]
+            num_list = [float(x.strip()) for x in user_input.split(",")]
+            print(f"Analysis: {engine.check_quadratic_pattern(num_list)}")
+
+        elif choice == '4':
+            print("Closing engine. Good luck with Precalc!")
+            break
+        else:
+            print("Invalid choice, try again.")
