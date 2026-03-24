@@ -39,8 +39,6 @@ class SequenceEngine:
 if __name__ == "__main__":
     engine = SequenceEngine()
     
-    print("--- Palantir Valley Forge Prep: Math Logic Tool ---")
-    
     # Example 1: Your earlier problem (a1=4, d=7, n=5)
     term_5 = engine.get_arithmetic_term(4, 7, 5)
     print(f"Arithmetic 5th term (a1=4, d=7): {term_5}")
